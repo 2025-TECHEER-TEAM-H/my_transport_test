@@ -32,21 +32,21 @@ pip install -r requirements.txt
 
 3. 환경 변수 설정 (선택사항)
 ```bash
-# .env 파일은 선택사항입니다 (코드에 API 키 기본값이 설정되어 있음) -> 수정하여서 추가 하셔야 합니다.
+# .env 파일은 선택사항입니다 (코드에 API 키 기본값이 설정되어 있음) -> 메인에 들어있던거 삭제해가지고 따로 추가 하셔야 합니다.
 # 환경 변수를 사용하려면 .env 파일을 생성하세요:
 # SUBWAY_API_KEY=your_key_here
 # BUS_API_KEY=your_key_here
 # SK_API_KEY=your_key_here
 ```
 
-4. 서버 실행
+4. case 1 로컬에서 서버 실행
 ```bash
 python main.py
 # 또는
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Docker를 사용한 실행
+### case 2 Docker를 사용한 실행
 
 1. Docker 이미지 빌드
 ```bash
@@ -63,7 +63,7 @@ docker run -d -p 8000:8000 --name transport-api transport-api
 # .env 파일이 있는 경우
 docker run -d -p 8000:8000 --env-file .env --name transport-api transport-api
 ```
-
+## 만약 로컬에서 python main.py를 켜놓은 상태에서 docker run을 하면 포트충동 문제가 생깁니다. 
 ## API 엔드포인트
 
 ### Swagger UI

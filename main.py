@@ -1,3 +1,4 @@
+import webbrowser  # 맨 위에 추가
 import os
 import httpx
 from fastapi import FastAPI, HTTPException, Query
@@ -79,4 +80,11 @@ async def get_sk_route(
 
 if __name__ == "__main__":
     import uvicorn
+    from threading import Timer
+
+    # 서버가 뜰 시간을 벌어주기 위해 1.5초 뒤에 브라우저 실행
+    # 주소를 127.0.0.1로 고정하여 바로 접속되게 함
+    Timer(1.5, lambda: webbrowser.open("http://127.0.0.1:8000/docs")).start()
+
+    # 서버 실행
     uvicorn.run(app, host="0.0.0.0", port=8000)
