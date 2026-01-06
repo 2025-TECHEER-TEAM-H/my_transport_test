@@ -1,0 +1,45 @@
+# .dockerignore: Docker 이미지 빌드 시 제외할 파일 및 디렉토리 목록
+# Docker build 시 COPY 명령에서 이 패턴의 파일들이 제외됩니다
+# .gitignore와 유사하지만 Docker 빌드 성능 향상을 위한 파일
+
+# Python 바이트코드 및 캐시 파일
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 가상 환경 (Docker 컨테이너 내부에서 새로 설치하므로 불필요)
+env
+venv
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+
+# 테스트 및 코드 커버리지 파일
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+
+# Git 관련 파일 (Docker 이미지에 포함할 필요 없음)
+.git
+.gitignore
+
+# 타입 체킹 및 테스트 캐시
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# 환경 변수 파일 (빌드 시점에는 필요 없음, 런타임에 주입)
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

@@ -1,0 +1,54 @@
+# .gitignore: Git 버전 관리에서 제외할 파일 및 디렉토리 목록
+# 이 파일에 명시된 패턴의 파일들은 git add, commit 시 무시됩니다
+
+# Python 바이트코드 파일 (컴파일된 Python 파일)
+# __pycache__/: Python이 자동 생성하는 캐시 디렉토리
+__pycache__/
+# *.pyc, *.pyo, *.pyd: 컴파일된 Python 파일들
+*.py[cod]
+*$py.class
+*.so
+
+# Python 패키지 빌드 관련 파일
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 가상 환경 (Virtual Environment)
+# venv/, env/, .venv/ 등 가상 환경 디렉토리 제외
+# 프로젝트마다 다른 가상 환경을 사용하므로 공유하지 않음
+venv/
+env/
+ENV/
+.venv
+
+# IDE 설정 파일 (개인 IDE 설정이므로 공유하지 않음)
+.vscode/      # Visual Studio Code 설정
+.idea/        # PyCharm, IntelliJ IDEA 설정
+*.swp         # Vim 스왑 파일
+*.swo         # Vim 스왑 파일
+*~            # 백업 파일
+
+# 환경 변수 파일 (민감한 정보가 포함될 수 있음)
+.env          # 환경 변수 파일 (API 키 등)
+.env.local    # 로컬 환경 변수 파일
+
+# 운영체제 관련 파일
+.DS_Store     # macOS Finder 메타데이터 파일
+Thumbs.db     # Windows 썸네일 캐시 파일
+
+# 로그 파일
+*.log
